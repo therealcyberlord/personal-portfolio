@@ -18,7 +18,7 @@ const Contact = () => {
         <div className="ml-4">
           <p className="text-white text-xl md:text-2xl">Xingyu Bian</p>
           <p className="text-gray-300 text-lg md:text-xl">
-            Data Science Intern @ AI Camp| Undergraduate Course Assistant
+            Data Science Intern @ AI Camp | Undergraduate Course Assistant
           </p>
           <p className="text-gray-300 text-lg md:text-xl">
             Email: xingyubian@umass.com

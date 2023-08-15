@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="p-4">
       <div className="flex justify-between items-center">
         <div className="text-sky-500 dark:text-sky-400 font-bold text-3xl">
-          Xingyu 🦥
+          <Link to="/"> Xingyu 🦥 </Link>
         </div>
         <ul className="flex space-x-4">
           <li>
