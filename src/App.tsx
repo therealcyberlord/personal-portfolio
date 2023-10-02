@@ -7,7 +7,7 @@ import Navbar from "./components/Nav";
 function App() {
   return (
     <div className="w-screen h-screen">
-      <Router basename={import.meta.env.DEV ? "/" : "/personal-portfolio/"}>
+      <Router basename={import.meta.env.DEV ? "/" : "/personal-portfolio"}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
