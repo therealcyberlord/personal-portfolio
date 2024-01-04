@@ -13,24 +13,22 @@ const Profile: React.FC<ProfileProps> = ({
   img_path,
   role,
 }) => {
-  // track current index and typed text
   const [typedText, setTypedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (currentIndex < description.length) {
-        setCurrentIndex(currentIndex + 1);
-        setTypedText((prevText) => prevText + description[currentIndex]);
-      } else {
-        clearInterval(timer);
-      }
-    }, 50);
+    const typingSpeed = 50; // Adjust typing speed here (milliseconds per character)
+    const descriptionLength = description.length;
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, [typedText]);
+    const typingEffect = setTimeout(() => {
+      if (currentIndex < descriptionLength) {
+        setTypedText((prevText) => prevText + description[currentIndex]);
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(typingEffect);
+  }, [currentIndex, description]);
 
   return (
     <div className="flex flex-col items-center">
@@ -41,7 +39,6 @@ const Profile: React.FC<ProfileProps> = ({
       />
       <div className="pt-6 text-center space-y-4">
         <blockquote className="max-w-4xl mx-auto text-lg lg:text-2xl">
-          {/* Limit the width of the description */}
           <p className="p-5 text-white font-serif">{typedText}</p>
         </blockquote>
       </div>
