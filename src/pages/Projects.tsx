@@ -14,10 +14,11 @@ const Projects = () => {
           src_path="https://github.com/tjpel/HinTinGs"
         />
         <Project
-          name="Blijax Stockbot"
-          description="Blijax is a multipurpose GPT 4-powered web application whose purpose is targeted at providing financial advice. I directed the development of the frontend and backend of the application."
-          img_path="https://github.com/therealcyberlord/Blijax-Stockbot/raw/main/frontend/src/assets/stockbot.jpg"
-          src_path="https://github.com/therealcyberlord/Blijax-Stockbot"
+          name="Human Dection in Video and Audio"
+          description="Human detection is an end-to-end application that leveraged machine learning models to detect unique faces and process audio
+from video sources, enabling law enforcement agencies to advance child rescue efforts more effectively"
+          img_path="https://github.com/apoorvasaraswat5/HumanDetection/blob/main/docs/output.png?raw=true"
+          src_path="https://github.com/apoorvasaraswat5/HumanDetection"
         />
 
         <Project
