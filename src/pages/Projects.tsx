@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <Project
           name="Hintings AI"
-          description="Hintings is an advanced Document Question Answering (QA) system that utilizes large language models (LLM) for retrieval augmented generation. In addition, it also supports web search and mathematical reasoning out of the box."
+          description="Hintings is an advanced Document Question Answering (QA) system that utilizes large language models (LLM) for retrieval augmented generation. In addition, it supports web search and mathematical reasoning out of the box"
           img_path="https://github.com/tjpel/HinTinGs/raw/main/frontend/public/hintings_logo_green.png"
           src_path="https://github.com/tjpel/HinTinGs"
         />
@@ -23,7 +23,7 @@ from video sources, enabling law enforcement agencies to advance child rescue ef
 
         <Project
           name="StockExpert.io"
-          description="A user-friendly web app to track stock portfolios, create watchlists, access real-time market data, view graphical stock trends, and analyze sentiment for informed investment decisions."
+          description="A user-friendly web app to track stock portfolios, create watchlists, access real-time market data, view graphical stock trends, and analyze sentiment for informed investment decisions"
           img_path="https://camo.githubusercontent.com/f77ce75cc626ece4c692bbedab5740f0f278ca0e7718df7751081969b66f45a8/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f52686c73683466414550492f302e6a7067"
           src_path="https://github.com/therealcyberlord/StockExpert.io"
         />
