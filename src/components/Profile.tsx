@@ -31,25 +31,21 @@ const Profile: React.FC<ProfileProps> = ({
   }, [currentIndex, description]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
       <img
-        className="w-64 h-64 rounded-full mx-auto lg:w-96 lg:h-96"
+        className="w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full mx-auto shadow-lg"
         src={img_path}
-        alt="Xingyu's profile picture"
+        alt="Profile picture"
       />
-      <div className="pt-6 text-center space-y-4">
-        <blockquote className="max-w-4xl mx-auto text-lg lg:text-2xl">
-          <p className="p-5 text-white font-serif">{typedText}</p>
-        </blockquote>
-      </div>
-      <figcaption className="font-medium text-center my-3">
-        <p className="text-sky-500 dark:text-sky-400 text-xl lg:text-2xl">
-          {name}
-        </p>
-        <p className="text-sky-500 dark:text-sky-400 text-xl lg:text-2xl">
+      <div className="mt-8 text-center">
+        <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">{name}</h2>
+        <h3 className="text-xl text-sky-500 dark:text-sky-400 sm:text-2xl md:text-3xl mt-2">
           {role}
-        </p>
-      </figcaption>
+        </h3>
+      </div>
+      <div className="mt-6 max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl lg:text-3xl text-center font-light leading-relaxed">
+        <p>{typedText}</p>
+      </div>
     </div>
   );
 };

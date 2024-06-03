@@ -2,25 +2,25 @@ import Project from "../components/Project";
 
 const Projects = () => {
   return (
-    <div className="px-4 py-4">
-      <h1 className="text-white text-2xl md:text-3xl font-medium mb-6">
+    <div className="container mx-auto px-4 py-12">
+      <h1 className="text-white text-3xl md:text-4xl font-semibold mb-12 text-center">
         My Projects 🧑‍💻
       </h1>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+       
+        <Project
+          name="Human Dection in Video and Audio"
+          description="Human detection is an end-to-end application that leveraged machine learning models to detect unique faces and process audio from video sources, enabling law enforcement agencies to advance child rescue efforts more effectively"
+          img_path="https://github.com/apoorvasaraswat5/HumanDetection/blob/main/docs/output.png?raw=true"
+          src_path="https://github.com/apoorvasaraswat5/HumanDetection"
+        />
+
         <Project
           name="Hintings AI"
           description="Hintings is an advanced Document Question Answering (QA) system that utilizes large language models (LLM) for retrieval augmented generation. In addition, it supports web search and mathematical reasoning out of the box"
           img_path="https://github.com/tjpel/HinTinGs/raw/main/frontend/public/hintings_logo_green.png"
           src_path="https://github.com/tjpel/HinTinGs"
         />
-        <Project
-          name="Human Dection in Video and Audio"
-          description="Human detection is an end-to-end application that leveraged machine learning models to detect unique faces and process audio
-from video sources, enabling law enforcement agencies to advance child rescue efforts more effectively"
-          img_path="https://github.com/apoorvasaraswat5/HumanDetection/blob/main/docs/output.png?raw=true"
-          src_path="https://github.com/apoorvasaraswat5/HumanDetection"
-        />
-
         <Project
           name="StockExpert.io"
           description="A user-friendly web app to track stock portfolios, create watchlists, access real-time market data, view graphical stock trends, and analyze sentiment for informed investment decisions"

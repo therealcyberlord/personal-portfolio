@@ -32,6 +32,15 @@ const Navbar = () => {
               About
             </Link>
           </li>
+
+          <li>
+            <Link
+              to="/resume"
+              className="text-sky-500 text-xl dark:text-sky-400 hover:text-blue-200 dark:hover:text-blue-200 transition duration-300"
+            >
+              Resume
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
