@@ -1,5 +1,3 @@
-import React from 'react';
-
 const resumeData = [
   {
     title: "Incoming Product Development Intern - Generative AI",
