@@ -22,7 +22,7 @@ const About = () => {
             rel="noopener noreferrer"
             className="text-blue-500 hover:text-blue-600 transition duration-300"
           >
-            <img src="src/assets/github.png" alt="GitHub" className="w-12 h-12 md:w-14 md:h-14" />
+            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" className="w-12 h-12 md:w-14 md:h-14" />
             
           </a>
           <a
