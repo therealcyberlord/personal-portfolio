@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <Project
           name="Hintings AI"
-          description="Hintings is an advanced Document Question Answering (QA) system that utilizes cutting-edge large language models (LLM) for retrieval augmented generation"
+          description="Hintings is an advanced Document Question Answering (QA) system that utilizes large language models (LLM) for retrieval augmented generation. In addition, it also supports web search and mathematical reasoning out of the box."
           img_path="https://github.com/tjpel/HinTinGs/raw/main/frontend/public/hintings_logo_green.png"
           src_path="https://github.com/tjpel/HinTinGs"
         />
@@ -28,7 +28,7 @@ from video sources, enabling law enforcement agencies to advance child rescue ef
           src_path="https://github.com/therealcyberlord/StockExpert.io"
         />
         <Project
-          name="Covid exploratory data analysis"
+          name="COVID exploratory data analysis"
           description="A data science project aimed at exploring the impact of COVID-19 through exploratory data analysis. Currently the most upvoted health code publication on Kaggle, totaling over 500K+ views"
           img_path="https://cdn.pixabay.com/photo/2020/05/15/18/46/coronavirus-5174671_1280.jpg"
           src_path="https://www.kaggle.com/code/therealcyberlord/coronavirus-covid-19-visualization-prediction"
