@@ -2,16 +2,16 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="p-4">
-      <div className="flex justify-between items-center">
-        <div className="text-sky-500 dark:text-sky-400 font-bold text-3xl">
-          <Link to="/"> Xingyu 🦥 </Link>
+    <nav className="bg-gray-900 p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="text-white font-bold text-2xl md:text-3xl">
+          <Link to="/" className="hover:text-sky-500 transition duration-300"> Xingyu 🦥 </Link>
         </div>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-6 text-lg md:text-xl">
           <li>
             <Link
               to="/"
-              className="text-sky-500 text-xl dark:text-sky-400 hover:text-blue-200 dark:hover:text-blue-200 transition duration-300"
+              className="text-gray-300 hover:text-sky-500 transition duration-300"
             >
               Home
             </Link>
@@ -19,7 +19,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/projects"
-              className="text-sky-500 text-xl dark:text-sky-400 hover:text-blue-200 dark:hover:text-blue-200 transition duration-300"
+              className="text-gray-300 hover:text-sky-500 transition duration-300"
             >
               Projects
             </Link>
@@ -27,16 +27,15 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className="text-sky-500 text-xl dark:text-sky-400 hover:text-blue-200 dark:hover:text-blue-200 transition duration-300"
+              className="text-gray-300 hover:text-sky-500 transition duration-300"
             >
               About
             </Link>
           </li>
-
           <li>
             <Link
               to="/resume"
-              className="text-sky-500 text-xl dark:text-sky-400 hover:text-blue-200 dark:hover:text-blue-200 transition duration-300"
+              className="text-gray-300 hover:text-sky-500 transition duration-300"
             >
               Resume
             </Link>
