@@ -1,6 +1,6 @@
 const resumeData = [
   {
-    title: "Incoming Product Development Intern - Generative AI",
+    title: "Product Development Intern - Generative AI",
     institution: "Trinity Life Sciences",
     dates: "Starting June 2024",
     location: "Greater Boston, Massachusetts, United States",
