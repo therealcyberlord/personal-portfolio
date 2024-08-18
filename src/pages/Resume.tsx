@@ -1,23 +1,24 @@
 const resumeData = [
   {
-    title: "Incoming Product Development Intern - Generative AI",
+    title: "Product Development Intern - Generative AI",
     institution: "Trinity Life Sciences",
-    dates: "Starting June 2024",
+    dates: "June 2024 - Aug 2024",
     location: "Greater Boston, Massachusetts, United States",
     description: [
-      
+      "Product development team, working on cutting-edge Generative AI features applied to life sciences",
+      "First-ever such hire at the company"
     ],
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw4JG_4U-X68TQouUUdS0EnZ56KOs0Ttubmw&s" // Placeholder link for the logo
   },
   {
-    title: "Graduate Researcher at UMass BioNLP Lab",
+    title: "Graduate Research Assistant at UMass BioNLP Lab",
     institution: "Manning College of Information and Computer Sciences, UMass Amherst",
-    dates: "February 2024 - Present (5 months)",
+    dates: "February 2024 - Present (7 months)",
     location: "Amherst, Massachusetts, United States",
     description: [
-      "Develop efficient LLM-based evaluation systems for USMLE patient encounters.",
-      "Streamline data pipelines with Pandas for automated file generation and processing.",
-      "Design multi-agent systems to simulate a virtual hospital environment."
+      `Develop AI evaluation systems for USMLE (United States Medical Licensing Examination) patient-encounters`,
+      `Conduct comprehensive benchmarking of state-of-the-art LLMs, including GPT 4, Claude 3, and Llama 3 on tasks such as "LLM as Medical Student" and "LLM as Clinical Skills Examiner"`,
+      `Co-author a research paper (under review at NeurIPS) proposing MedQA-CS, a comprehensive benchmark for clinical skills evaluation`
     ],
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5j2PEB7eZobu8CQDtamWBP6EOYq4eYlcnsg&s"
   },
@@ -39,8 +40,8 @@ const resumeData = [
     dates: "May 2023 - August 2023 (4 months)",
     location: "Palo Alto, California, United States",
     description: [
-      "Developed a retrieval QA system using Langchain and vector database Chroma, supporting multiple documents as input.",
-      "Applied prompt engineering techniques such as chain-of-thought (CoT) to improve accuracy and reduce hallucination.",
+      "Designed and implemented a versatile document QA system supporting multiple file uploads",
+      "Led machine learning initiatives within the project team, focusing on optimizing the RAG system and integrating external tools",
       "Mentored 10+ high school students in building ML-powered applications from the ground up."
     ],
     logo: "https://static.wixstatic.com/media/12b467_a4ceef0f338c41c7885cb083ea36a00f~mv2_d_1742_1743_s_2.png" 
