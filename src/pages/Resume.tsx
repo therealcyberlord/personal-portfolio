@@ -1,6 +1,6 @@
 const resumeData = [
   {
-    title: "Product Development Intern - Generative AI",
+    title: "AI Software Engineer Intern",
     institution: "Trinity Life Sciences",
     dates: "June 2024 - Aug 2024",
     location: "Greater Boston, Massachusetts, United States",
@@ -8,17 +8,17 @@ const resumeData = [
       "Product development team, working on cutting-edge Generative AI features applied to life sciences",
       "First-ever such hire at the company"
     ],
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw4JG_4U-X68TQouUUdS0EnZ56KOs0Ttubmw&s" // Placeholder link for the logo
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw4JG_4U-X68TQouUUdS0EnZ56KOs0Ttubmw&s"
   },
   {
     title: "Graduate Research Assistant at UMass BioNLP Lab",
     institution: "Manning College of Information and Computer Sciences, UMass Amherst",
-    dates: "February 2024 - Present (7 months)",
+    dates: "February 2024 - Present",
     location: "Amherst, Massachusetts, United States",
     description: [
-      `Develop AI evaluation systems for USMLE (United States Medical Licensing Examination) patient-encounters`,
-      `Conduct comprehensive benchmarking of state-of-the-art LLMs, including GPT 4, Claude 3, and Llama 3 on tasks such as "LLM as Medical Student" and "LLM as Clinical Skills Examiner"`,
-      `Co-author a research paper (under review at NeurIPS) proposing MedQA-CS, a comprehensive benchmark for clinical skills evaluation`
+      `Developed robust evaluation systems for the USMLE information gathering section using the LLM-as-a-judge framework`,
+      `Benchmarked both open-source and proprietary LLMs (GPT, Claude, Llama, Qwen) on tasks such as "LLM-as-medical-student" and "LLM-as-clinical-skills-examiner," while keeping human experts in the loop`,
+      `Co-authored a research paper introducing a comprehensive benchmark for clinical skills evaluation, (https://arxiv.org/abs/2410.01553), with ongoing research applying knowledge graphs and other advanced retrieval methods to improve clinical reasoning`
     ],
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5j2PEB7eZobu8CQDtamWBP6EOYq4eYlcnsg&s"
   },
@@ -28,8 +28,8 @@ const resumeData = [
     dates: "February 2023 - December 2023 (11 months)",
     location: "Amherst, Massachusetts, United States",
     description: [
-      "Handled student grading and assisted the professor with creating new course content.",
-      "Courses: CS 389 (Introduction to Machine Learning), CS 383 (Artificial Intelligence)."
+      "Handled student grading and assisted the professor with creating new course content",
+      "Courses: CS 389 (Introduction to Machine Learning), CS 383 (Artificial Intelligence)"
     ],
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5j2PEB7eZobu8CQDtamWBP6EOYq4eYlcnsg&s"
   },
@@ -40,9 +40,9 @@ const resumeData = [
     dates: "May 2023 - August 2023 (4 months)",
     location: "Palo Alto, California, United States",
     description: [
-      "Designed and implemented a versatile document QA system supporting multiple file uploads",
-      "Led machine learning initiatives within the project team, focusing on optimizing the RAG system and integrating external tools",
-      "Mentored 10+ high school students in building ML-powered applications from the ground up."
+      "Engineered a question-answering chatbot using Langchain and Chroma vector database, enabling support for multiple file uploads",
+      "Led machine learning initiatives within the project team, focusing on optimizing RAG workflows and integrating external tools such as web search via SerpApi for more versatility",
+      "Mentored 10+ high school students in building machine learning applications from scratch using Python, React, and Django"
     ],
     logo: "https://static.wixstatic.com/media/12b467_a4ceef0f338c41c7885cb083ea36a00f~mv2_d_1742_1743_s_2.png" 
   },
@@ -65,6 +65,7 @@ const resumeData = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/4/4f/UMass_Seal_Medium_PMS_202.png"
   }
 ];
+
 
 const Resume = () => {
   return (

@@ -24,7 +24,7 @@ const Projects = () => {
         <Project
           name="StockExpert.io"
           description="A user-friendly web app to track stock portfolios, create watchlists, access real-time market data, view graphical stock trends, and analyze sentiment for informed investment decisions"
-          img_path="https://camo.githubusercontent.com/f77ce75cc626ece4c692bbedab5740f0f278ca0e7718df7751081969b66f45a8/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f52686c73683466414550492f302e6a7067"
+          img_path="https://camo.githubusercontent.com/8fe6edb4eb6e2f060f1326aaa515680e3b6c8e02e9a2d5e784f7e4d114ad26b5/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f52686c73683466414550492f302e6a7067"
           src_path="https://github.com/therealcyberlord/StockExpert.io"
         />
         <Project

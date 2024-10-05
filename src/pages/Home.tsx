@@ -8,7 +8,7 @@ const Home = () => {
         name="Xingyu Bian"
         description="Master's in Computer Science at UMass Amherst, currently doing ML research with the UMass BioNLP Group."
         img_path="https://raw.githubusercontent.com/therealcyberlord/personal-portfolio/master/src/assets/profile.jpg"
-        role="Student at UMass Amherst"
+        role="Graduate student at UMass Amherst"
       />
     </>
   );
