@@ -8,7 +8,7 @@ const Projects = () => {
     },
     {
       name: "Hintings AI 🤖",
-      description: "Hintings is an intelligent document chatbot that allows users to upload multiple files for context. It integrates seamlessly with external tools like SerpApi for web search and Hugging Face for image generation, offering a dynamic and comprehensive experience. Built during the summer of 2023 at AI Camp in a team of four, it won the award for Best Product among all interns.",
+      description: "Hintings is an intelligent document chatbot that allows users to upload multiple files for context. It integrates seamlessly with external tools like SerpApi for web search and Hugging Face for image generation, offering a dynamic and comprehensive experience. Built during the summer of 2023 at AI Camp by a team of four, it won the award for Best Product among all interns.",
       src_path: "https://github.com/tjpel/HinTinGs",
       theme: "bg-gradient-to-r from-gray-600 to-gray-700" // Muted gray gradient
     },
