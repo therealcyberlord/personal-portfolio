@@ -1,7 +1,14 @@
-import { Code, Database, Cloud } from 'lucide-react';
+import { Code, Database, Cloud, Rocket } from 'lucide-react';
 import Profile from "../components/Profile";
 
 const Home = () => {
+  const technologies = [
+    { name: "React", color: "text-blue-400" },
+    { name: "TypeScript", color: "text-blue-500" },
+    { name: "Tailwind CSS", color: "text-teal-400" },
+    { name: "Vite", color: "text-purple-400" }
+  ];
+
   const skillCategories = [
     {
       title: "Programming Languages",
@@ -28,6 +35,28 @@ const Home = () => {
         img_path="https://raw.githubusercontent.com/therealcyberlord/personal-portfolio/master/src/assets/profile.jpg"
         role="Software Engineer, AI Researcher, Lifelong Learner"
       />
+
+      <div className="max-w-4xl mx-auto px-4 mt-12">
+        <div className="bg-gray-800/50 rounded-2xl p-6 backdrop-blur-sm border border-gray-700">
+          <div className="flex items-center justify-center mb-4">
+            <Rocket className="w-6 h-6 text-sky-400 mr-2" />
+            <h3 className="text-xl font-semibold text-white">Built Using</h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            {technologies.map((tech) => (
+              <div
+                key={tech.name}
+                className={`px-4 py-2 rounded-full bg-gray-800 border border-gray-700 ${tech.color} font-medium hover:scale-105 transition-transform duration-300`}
+              >
+                {tech.name}
+              </div>
+            ))}
+          </div>
+          <p className="text-gray-300 text-center max-w-2xl mx-auto">
+            This portfolio is crafted with modern web technologies. React provides the interactive UI, TypeScript ensures type safety, Tailwind CSS enables rapid styling, and Vite offers lightning-fast builds.
+          </p>
+        </div>
+      </div>
 
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
