@@ -1,3 +1,5 @@
+import { Printer } from "lucide-react";
+
 const calculateDuration = (start: string, end: string): string => {
   const startDate = new Date(start);
   const endDate = end === "Present" ? new Date() : new Date(end);
@@ -116,9 +118,22 @@ const sortedResumeData = [...resumeData].sort((a, b) => {
 });
 
 const Resume: React.FC = () => {
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen py-12 px-6 sm:px-8 lg:px-24">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div className="flex justify-end mb-4">
+          <button
+            onClick={handlePrint}
+            className="text-gray-600 hover:text-gray-800 flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md transition-all duration-300"
+          >
+            <Printer size={20} />
+            <span>Print</span>
+          </button>
+        </div>
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">My Resume</h1>
         {sortedResumeData.map((item, index) => (
           <div key={index} className="mb-8 flex flex-col md:flex-row items-center md:items-start">
