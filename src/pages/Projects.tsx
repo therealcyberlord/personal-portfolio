@@ -1,35 +1,33 @@
-import Project from "../components/Project";
-
 const Projects = () => {
   const projects = [
     {
-      name: "Human Detection in Video and Audio",
-      description: "Human detection is an end-to-end application that leveraged machine learning models to detect unique faces and process audio from video sources, enabling law enforcement agencies to advance child rescue efforts more effectively",
-      img_path: "https://github.com/apoorvasaraswat5/HumanDetection/blob/main/docs/output.png?raw=true",
-      src_path: "https://github.com/apoorvasaraswat5/HumanDetection"
+      name: "Human Detection in Video and Audio 🔊",
+      description: "This project implements an end-to-end solution for human detection in video and audio, leveraging advanced machine learning models to identify faces and process audio. The application is designed to assist law enforcement by improving child rescue operations with more accurate and timely identification. This is affiliated with the UMass Rescue Lab through the independent study: Machine Learning Applied to Child Rescue.",
+      src_path: "https://github.com/apoorvasaraswat5/HumanDetection",
+      theme: "bg-gradient-to-r from-blue-800 to-blue-900" 
     },
     {
-      name: "Hintings AI",
-      description: "Hintings is an advanced Document Question Answering (QA) system that utilizes large language models (LLM) for retrieval augmented generation. In addition, it supports web search and mathematical reasoning out of the box",
-      img_path: "https://github.com/tjpel/HinTinGs/raw/main/frontend/public/hintings_logo_green.png",
-      src_path: "https://github.com/tjpel/HinTinGs"
+      name: "Hintings AI 🤖",
+      description: "Hintings is an intelligent document chatbot that allows users to upload multiple files for context. It integrates seamlessly with external tools like SerpApi for web search and Hugging Face for image generation, offering a dynamic and comprehensive experience. Built during the summer of 2023 at AI Camp in a team of four, it won the award for Best Product among all interns.",
+      src_path: "https://github.com/tjpel/HinTinGs",
+      theme: "bg-gradient-to-r from-purple-700 to-indigo-800" 
     },
     {
-      name: "StockExpert.io",
-      description: "A user-friendly web app to track stock portfolios, create watchlists, access real-time market data, view graphical stock trends, and analyze sentiment for informed investment decisions",
-      img_path: "https://camo.githubusercontent.com/8fe6edb4eb6e2f060f1326aaa515680e3b6c8e02e9a2d5e784f7e4d114ad26b5/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f52686c73683466414550492f302e6a7067",
-      src_path: "https://github.com/therealcyberlord/StockExpert.io"
+      name: "StockExpert.io 📈",
+      description: "StockExpert.io is an intuitive web application designed to help users track stock portfolios, create personalized watchlists, access real-time market data, visualize stock trends, and analyze sentiment to make informed investment decisions.",
+      src_path: "https://github.com/therealcyberlord/StockExpert.io",
+      theme: "bg-gradient-to-r from-green-700 to-green-800" 
     },
     {
-      name: "COVID exploratory data analysis",
-      description: "A data science project aimed at exploring the impact of COVID-19 through exploratory data analysis. Currently the most upvoted health code publication on Kaggle, totaling over 500K+ views",
-      img_path: "https://cdn.pixabay.com/photo/2020/05/15/18/46/coronavirus-5174671_1280.jpg",
-      src_path: "https://www.kaggle.com/code/therealcyberlord/coronavirus-covid-19-visualization-prediction"
+      name: "COVID Exploratory Data Analysis 🦠",
+      description: "This data science project offers a comprehensive analysis of the COVID-19 pandemic’s impact. It started as a hobby project during my senior year of high school to raise awareness about COVID-19 when the pandemic first began. Since then, it has become the most upvoted health-related publication on Kaggle, with over 500K views, providing valuable insights through interactive visualizations and analysis.",
+      src_path: "https://www.kaggle.com/code/therealcyberlord/coronavirus-covid-19-visualization-prediction",
+      theme: "bg-gradient-to-r from-teal-600 to-teal-700" 
     }
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-800 to-gray-900">
+    <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-6 flex items-center justify-center gap-3">
@@ -45,13 +43,19 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="transform hover:scale-[1.02] transition-all duration-300">
-              <Project
-                name={project.name}
-                description={project.description}
-                img_path={project.img_path}
-                src_path={project.src_path}
-              />
+            <div key={index} className={`transform hover:scale-[1.02] transition-all duration-300 ${project.theme}`}>
+              <div className="p-6 rounded-lg shadow-lg bg-opacity-90">
+                <h3 className="text-2xl text-white font-semibold mb-2">{project.name}</h3>
+                <p className="text-lg text-gray-100 mt-4">{project.description}</p>
+                <a
+                  href={project.src_path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-sky-400 hover:text-sky-300 transition-colors text-lg"
+                >
+                  View Project
+                </a>
+              </div>
             </div>
           ))}
         </div>
