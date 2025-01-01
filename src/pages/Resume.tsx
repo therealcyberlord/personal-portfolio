@@ -1,4 +1,5 @@
-import { Printer } from "lucide-react";
+import { useState } from 'react';
+import { Printer, Sun, Moon } from "lucide-react";
 
 const calculateDuration = (start: string, end: string): string => {
   const startDate = new Date(start);
@@ -107,7 +108,6 @@ const resumeData = [
   }
 ];
 
-// Sorting function
 const sortedResumeData = [...resumeData].sort((a, b) => {
   if (a.endDate === "Present" && b.endDate !== "Present") return -1;
   if (a.endDate !== "Present" && b.endDate === "Present") return 1;
@@ -118,23 +118,64 @@ const sortedResumeData = [...resumeData].sort((a, b) => {
 });
 
 const Resume: React.FC = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
   const handlePrint = () => {
     window.print();
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const baseClasses = darkMode ? 
+    "bg-gray-900 text-white transition-colors duration-300" : 
+    "bg-gray-100 text-gray-800 transition-colors duration-300";
+
+  const cardClasses = darkMode ? 
+    "bg-gray-800 shadow-lg" : 
+    "bg-white shadow-lg";
+
+  const buttonClasses = darkMode ?
+    "text-gray-300 hover:text-white border-gray-600 hover:border-gray-400" :
+    "text-gray-600 hover:text-gray-800 border-gray-300 hover:border-gray-400";
+
+  const headingClasses = darkMode ?
+    "text-white" :
+    "text-gray-800";
+
+  const subheadingClasses = darkMode ?
+    "text-gray-300" :
+    "text-gray-600";
+
+  const metaClasses = darkMode ?
+    "text-gray-400" :
+    "text-gray-500";
+
+  const descriptionClasses = darkMode ?
+    "text-gray-300" :
+    "text-gray-700";
+
   return (
-    <div className="bg-gray-100 min-h-screen py-12 px-6 sm:px-8 lg:px-24">
-      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <div className="flex justify-end mb-4">
+    <div className={`min-h-screen py-12 px-6 sm:px-8 lg:px-24 ${baseClasses}`}>
+      <div className={`max-w-4xl mx-auto p-8 rounded-lg ${cardClasses}`}>
+        <div className="flex justify-end mb-4 space-x-4">
+          <button
+            onClick={toggleDarkMode}
+            className={`flex items-center space-x-2 px-4 py-2 border rounded-md transition-all duration-300 ${buttonClasses}`}
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+          </button>
           <button
             onClick={handlePrint}
-            className="text-gray-600 hover:text-gray-800 flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md transition-all duration-300"
+            className={`flex items-center space-x-2 px-4 py-2 border rounded-md transition-all duration-300 ${buttonClasses}`}
           >
             <Printer size={20} />
             <span>Print</span>
           </button>
         </div>
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">My Resume</h1>
+        <h1 className={`text-4xl font-bold text-center mb-8 ${headingClasses}`}>My Resume</h1>
         {sortedResumeData.map((item, index) => (
           <div key={index} className="mb-8 flex flex-col md:flex-row items-center md:items-start">
             {item.logo && (
@@ -143,9 +184,9 @@ const Resume: React.FC = () => {
               </div>
             )}
             <div>
-              <h2 className="text-2xl font-semibold text-gray-800">{item.title}</h2>
-              <h3 className="text-xl text-gray-600">{item.institution}</h3>
-              <p className="text-sm text-gray-500">
+              <h2 className={`text-2xl font-semibold ${headingClasses}`}>{item.title}</h2>
+              <h3 className={`text-xl ${subheadingClasses}`}>{item.institution}</h3>
+              <p className={`text-sm ${metaClasses}`}>
                 {formatDate(item.startDate)} - {item.endDate === "Present" ? "Present" : formatDate(item.endDate)}
                 {calculateDuration(item.startDate, item.endDate) && !calculateDuration(item.startDate, item.endDate).startsWith("0")
                   ? ` (${calculateDuration(item.startDate, item.endDate)})`
@@ -154,7 +195,7 @@ const Resume: React.FC = () => {
               </p>
 
               {item.description && (
-                <ul className="list-disc list-inside mt-2 text-gray-700">
+                <ul className={`list-disc list-inside mt-2 ${descriptionClasses}`}>
                   {item.description.map((desc, i) => (
                     <li key={i}>
                       {desc.text}
@@ -163,7 +204,7 @@ const Resume: React.FC = () => {
                           href={desc.link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-500 underline"
+                          className={`${darkMode ? 'text-blue-400' : 'text-blue-500'} underline`}
                         >
                           {desc.link.label}
                         </a>
