@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, NotebookText } from 'lucide-react';
 
 interface ProfileProps {
   name: string;
@@ -35,6 +35,7 @@ const Profile: React.FC<ProfileProps> = ({
     { icon: <Github className="w-6 h-6" />, href: "https://github.com/therealcyberlord" },
     { icon: <Linkedin className="w-6 h-6" />, href: "https://www.linkedin.com/in/xingyu-bian-1734bb134/" },
     { icon: <Mail className="w-6 h-6" />, href: "mailto:xingyubian@umass.edu" },
+    { icon: <NotebookText className="w-6 h-6" />, href: "https://paperswithcode.com/search?q=author%3AXingyu+Bian" },
   ];
 
   return (

@@ -1,26 +1,5 @@
-import React, { useState } from 'react';
-import { Printer, Sun, Moon, MapPin, Calendar, Briefcase, ExternalLink } from "lucide-react";
-
-interface LinkData {
-  url: string;
-  label: string;
-}
-
-interface DescriptionItem {
-  text: string;
-  link?: LinkData;
-  suffix?: string;
-}
-
-interface ResumeItem {
-  title: string;
-  institution: string;
-  startDate: string;
-  endDate: string;
-  location: string;
-  description: DescriptionItem[];
-  logo: string;
-}
+import { useState } from 'react';
+import { Printer, Sun, Moon } from "lucide-react";
 
 const calculateDuration = (start: string, end: string): string => {
   const startDate = new Date(start);
@@ -29,20 +8,20 @@ const calculateDuration = (start: string, end: string): string => {
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
 
-  return `${years > 0 ? `${years}y` : ""}${remainingMonths > 0 ? ` ${remainingMonths}m` : ""}`.trim();
+  return `${years > 0 ? `${years} year${years > 1 ? "s" : ""} ` : ""}${remainingMonths > 0 ? `${remainingMonths} month${remainingMonths > 1 ? "s" : ""}` : ""}`.trim();
 };
 
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
-  const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "short" };
+  const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long" };
   return date.toLocaleDateString(undefined, options);
 };
 
-const resumeData: ResumeItem[] = [
+const resumeData = [
   {
-    title: "Incoming Software Engineer",
+    title: "Software Engineer",
     institution: "Trinity Life Sciences",
-    startDate: "2024-12-31",
+    startDate: "2025-01-07",
     endDate: "Present",
     location: "Waltham, Massachusetts, United States",
     description: [
@@ -64,7 +43,7 @@ const resumeData: ResumeItem[] = [
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw4JG_4U-X68TQouUUdS0EnZ56KOs0Ttubmw&s"
   },
   {
-    title: "Machine Learning Researcher at UMass BioNLP Lab",
+    title: "AI Researcher at UMass BioNLP Lab",
     institution: "Manning College of Information and Computer Sciences, UMass Amherst",
     startDate: "2024-02-01",
     endDate: "Present",
@@ -149,139 +128,95 @@ const Resume: React.FC = () => {
     setDarkMode(!darkMode);
   };
 
+  const baseClasses = darkMode ? 
+    "bg-gray-900 text-white transition-colors duration-300" : 
+    "bg-gray-100 text-gray-800 transition-colors duration-300";
+
+  const cardClasses = darkMode ? 
+    "bg-gray-800 shadow-lg" : 
+    "bg-white shadow-lg";
+
+  const buttonClasses = darkMode ?
+    "text-gray-300 hover:text-white border-gray-600 hover:border-gray-400" :
+    "text-gray-600 hover:text-gray-800 border-gray-300 hover:border-gray-400";
+
+  const headingClasses = darkMode ?
+    "text-white" :
+    "text-gray-800";
+
+  const subheadingClasses = darkMode ?
+    "text-gray-300" :
+    "text-gray-600";
+
+  const metaClasses = darkMode ?
+    "text-gray-400" :
+    "text-gray-500";
+
+  const descriptionClasses = darkMode ?
+    "text-gray-300" :
+    "text-gray-700";
+
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
-      darkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'
-    }`}>
-      <div className="max-w-5xl mx-auto p-6 sm:p-8 pt-16">
-        <header className="mb-8 sticky top-20 z-10">
-          <div className={`flex justify-between items-center mb-6 p-4 rounded-xl ${
-            darkMode ? 'bg-gray-900/80 backdrop-blur-sm' : 'bg-gray-50/80 backdrop-blur-sm'
-          }`}>
-            <h1 className={`text-4xl font-bold ${
-              darkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              Professional Experience
-            </h1>
-            <div className="flex gap-3">
-              <button
-                onClick={toggleDarkMode}
-                className={`p-2 rounded-full transition-colors duration-200 ${
-                  darkMode 
-                    ? 'bg-gray-800 hover:bg-gray-700 text-gray-200' 
-                    : 'bg-white hover:bg-gray-100 text-gray-600 shadow-sm'
-                }`}
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-              <button
-                onClick={handlePrint}
-                className={`p-2 rounded-full transition-colors duration-200 ${
-                  darkMode 
-                    ? 'bg-gray-800 hover:bg-gray-700 text-gray-200' 
-                    : 'bg-white hover:bg-gray-100 text-gray-600 shadow-sm'
-                }`}
-                aria-label="Print resume"
-              >
-                <Printer size={20} />
-              </button>
+    <div className={`min-h-screen py-12 px-6 sm:px-8 lg:px-24 ${baseClasses}`}>
+      <div className={`max-w-4xl mx-auto p-8 rounded-lg ${cardClasses}`}>
+        <div className="flex justify-end mb-4 space-x-4">
+          <button
+            onClick={toggleDarkMode}
+            className={`flex items-center space-x-2 px-4 py-2 border rounded-md transition-all duration-300 ${buttonClasses}`}
+          >
+            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            <span>{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+          </button>
+          <button
+            onClick={handlePrint}
+            className={`flex items-center space-x-2 px-4 py-2 border rounded-md transition-all duration-300 ${buttonClasses}`}
+          >
+            <Printer size={20} />
+            <span>Print</span>
+          </button>
+        </div>
+        <h1 className={`text-4xl font-bold text-center mb-8 ${headingClasses}`}>My Resume</h1>
+        {sortedResumeData.map((item, index) => (
+          <div key={index} className="mb-8 flex flex-col md:flex-row items-center md:items-start">
+            {item.logo && (
+              <div className="w-24 h-24 flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                <img src={item.logo} alt={`${item.institution} logo`} className="w-full h-full object-contain" />
+              </div>
+            )}
+            <div>
+              <h2 className={`text-2xl font-semibold ${headingClasses}`}>{item.title}</h2>
+              <h3 className={`text-xl ${subheadingClasses}`}>{item.institution}</h3>
+              <p className={`text-sm ${metaClasses}`}>
+                {formatDate(item.startDate)} - {item.endDate === "Present" ? "Present" : formatDate(item.endDate)}
+                {calculateDuration(item.startDate, item.endDate) && !calculateDuration(item.startDate, item.endDate).startsWith("0")
+                  ? ` (${calculateDuration(item.startDate, item.endDate)})`
+                  : ""}
+                - {item.location}
+              </p>
+
+              {item.description && (
+                <ul className={`list-disc list-inside mt-2 ${descriptionClasses}`}>
+                  {item.description.map((desc, i) => (
+                    <li key={i}>
+                      {desc.text}
+                      {desc.link && (
+                        <a
+                          href={desc.link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${darkMode ? 'text-blue-400' : 'text-blue-500'} underline`}
+                        >
+                          {desc.link.label}
+                        </a>
+                      )}
+                      {desc.suffix}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
-        </header>
-
-        <div className="space-y-6">
-          {sortedResumeData.map((item, index) => (
-            <div
-              key={index}
-              className={`p-6 rounded-xl transition-colors duration-200 ${
-                darkMode ? 'bg-gray-800' : 'bg-white shadow-sm'
-              }`}
-            >
-              <div className="flex flex-col md:flex-row md:items-start gap-6">
-                {item.logo && (
-                  <div className="flex-shrink-0">
-                    <div className={`w-16 h-16 rounded-lg overflow-hidden ${
-                      darkMode ? 'bg-gray-700' : 'bg-gray-100'
-                    }`}>
-                      <img 
-                        src={item.logo} 
-                        alt={`${item.institution} logo`} 
-                        className="w-full h-full object-contain p-2"
-                      />
-                    </div>
-                  </div>
-                )}
-                
-                <div className="flex-grow space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between flex-wrap gap-2">
-                      <h2 className="text-xl font-semibold">{item.title}</h2>
-                      <span className={`text-sm font-medium ${
-                        darkMode ? 'text-gray-400' : 'text-gray-500'
-                      }`}>
-                        {calculateDuration(item.startDate, item.endDate)}
-                      </span>
-                    </div>
-                    <div className="mt-1">
-                      <h3 className={`text-lg ${
-                        darkMode ? 'text-gray-300' : 'text-gray-700'
-                      }`}>
-                        {item.institution}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-4">
-                    <div className={`flex items-center gap-1 text-sm ${
-                      darkMode ? 'text-gray-400' : 'text-gray-500'
-                    }`}>
-                      <Calendar size={16} />
-                      <span>
-                        {formatDate(item.startDate)} - {item.endDate === "Present" ? "Present" : formatDate(item.endDate)}
-                      </span>
-                    </div>
-                    <div className={`flex items-center gap-1 text-sm ${
-                      darkMode ? 'text-gray-400' : 'text-gray-500'
-                    }`}>
-                      <MapPin size={16} />
-                      <span>{item.location}</span>
-                    </div>
-                  </div>
-
-                  {item.description && (
-                    <ul className="space-y-2">
-                      {item.description.map((desc, i) => (
-                        <li key={i} className="flex gap-2">
-                          <Briefcase size={18} className="flex-shrink-0 mt-1" />
-                          <span className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
-                            {desc.text}
-                            {desc.link && (
-                              <>
-                                <a
-                                  href={desc.link.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className={`inline-flex items-center gap-1 ml-1 ${
-                                    darkMode ? 'text-blue-400' : 'text-blue-600'
-                                  } hover:underline`}
-                                >
-                                  {desc.link.label}
-                                  <ExternalLink size={14} />
-                                </a>
-                              </>
-                            )}
-                            {desc.suffix}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
     </div>
   );
